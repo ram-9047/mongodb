@@ -1,5 +1,6 @@
-## MongoDB(10 min)
-MongoDB is a NoSQL database. It is an open-source, cross-platform, document-oriented database written in C++. It uses javascript as their query language.
+## MongoDB
+
+MongoDB is a No SQL database. It is an open-source, cross-platform, document-oriented database written in C++. It uses javascript as their query language.
 
 A record in MongoDB is a document, which is a data structure composed of field and value pairs. MongoDB documents are similar to JSON objects. The values of fields may include other documents, arrays, and arrays of documents.
 
@@ -21,7 +22,7 @@ A record in MongoDB is a document, which is a data structure composed of field a
   - schemaless database written in c++
   - supports json data model
 
-### Installation (5 min)
+### Installation 
 Ubuntu: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
 MacOS: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
 
@@ -38,33 +39,25 @@ Mongo server can list all the databses present on local system. The structure of
   - Each document can have 1 to multiple fields.
 
 We can perform all database operations using mongo shell.
-### Shell commands(5 min)
+### Shell commands
   - db.version()
   - db.stats()
   - db.help()
 
-##### practice 
-Run shell commands in mongo shell.
-
 Few common operations are: 
-### List databases(2 min)
+### List databases
 `show dbs` lists all databases.
 
-### Create database(2 min)
+### Create database
 `use DB_NAME` // use sample creates a database sample if not present, otherwise connects to that database.
 
 To check the current databse connected to, use `db`.
 
-##### practice(2 min)
-1. create a database of your city name.
-2. check list of databases to see newly created database.
-3. check which database you are currently connected to ?
-
-### Delete database(2 min)
+### Delete database
   - `use DB_NAME` command connects to that specific database.
   - `db.dropDatabase() deletes that database.
 
-### List collections in a database(5 min)
+### List collections in a database
 Suppose we want to list all collections from sample database.
   - First we connect to that database using `use sample`.
   - For a list of all collections inside sample database we use `show collections`.
@@ -76,11 +69,7 @@ Inside sample database
 
   - We can explicitly create a collection using `db.createCollection('users')` inside sample database.
 
-##### practice 
-1. List collections from a database.
-2. create a new collection in your city database which you created recently.
-
-### capped collection(5 min)
+### capped collection
 Capped collection is a fixed size collecction that automatically overwrites its oldest entries when it reaches its maximum size. If you specify true, you need to specify size(in bytes) parameter also.
 `db.createCollection("posts", {capped: true, size: 4096})`
 
@@ -94,7 +83,7 @@ Capped collection is a fixed size collecction that automatically overwrites its 
 
   - The size parameter specifies the size of the capped collection in bytes.
 
-### Drop collection(5 min)
+### Drop collection
 Deletes a collection.
   - `db.COLLECTION_NAME.drop()` drops the whole collection with the contents. 
   - `db.COLLECTION_NAME.remove({})` drops all document from collection but collection remains.
@@ -102,11 +91,6 @@ Deletes a collection.
 ### Rename collection
 Renames a collection.
 `db.COLLECTION_NAME.renameCollection(NEW_COLLECTION_NAME)` renames collection to newer collection name.  
-
-##### practice(5 min)
-1. create a capped collection with maximum of 3 documents and try inserting more than 3 to see the result. 
-2. check whether a collection is capped or not ?
-3. Delete a collection and then the entire database. 
 
 
 
